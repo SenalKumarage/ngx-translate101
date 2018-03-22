@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslationChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -21,8 +21,10 @@ export class AppComponent {
       this.translate.use('en');
     }
 
-    this.translate.get('APP.STRING1').subscribe(value => {
-      this.transViaService = value;
+    this.translate.onLangChange.subscribe((event: TranslationChangeEvent) => {
+      this.translate.get('APP.STRING1').subscribe(value => {
+        this.transViaService = value;
+      });
     });
   }
 }
