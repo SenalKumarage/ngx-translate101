@@ -1,6 +1,7 @@
 {
     "APP": {
         "TITLE": "Hello Angular 5 with ngx-translate!",
-        "SELECT": "Change language"
+        "SELECT": "Change language",
+        "STRING1": "I got translated from the service"
     }
 }

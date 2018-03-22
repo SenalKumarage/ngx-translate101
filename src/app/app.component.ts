@@ -8,6 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   langs = ['en', 'fr', 'es'];
+  transViaService = '';
 
   constructor(private translate: TranslateService) {
     // this language will be used as a fallback when a translation isn't found in the current language
@@ -19,5 +20,9 @@ export class AppComponent {
     } else {
       this.translate.use('en');
     }
+
+    this.translate.get('APP.STRING1').subscribe(value => {
+      this.transViaService = value;
+    });
   }
 }
